@@ -528,3 +528,20 @@ main b,main strong{font-weight:inherit!important}
 .hero{min-height:calc(100svh - 65px)}
 @media(min-width:900px){.hero{min-height:640px}}
 @media(max-width:899px){.ftr{padding-bottom:84px}}
+
+/* tighter section spacing */
+.fold{padding:20px 0}
+.bgsec .wrap{padding-top:20px;padding-bottom:160px}
+.phb{padding:26px 0 0}
+.phb-tx{padding-bottom:24px}
+.formbar{padding-bottom:0}
+.g-pa,.g-fo,.g-know{margin-top:14px}
+.office,.cta{margin-top:0}
+@media(min-width:900px){
+ .fold{padding:28px 0}
+ .bgsec .wrap{padding-top:28px;padding-bottom:28px}
+ .phb{padding:40px 0 0}
+ .phb-tx{padding-bottom:40px}
+ .phb-in{min-height:420px}
+ .phb-art{max-height:440px}
+}
