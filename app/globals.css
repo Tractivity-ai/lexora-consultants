@@ -465,3 +465,18 @@ main b,main strong{font-weight:inherit!important}
  .phb-tx{max-width:620px;padding-bottom:64px}
  .phb-art{display:block;position:absolute;right:6%;bottom:0;height:100%;max-height:520px;width:auto;z-index:1}
 }
+
+/* hover fill, from the Philosophy list, tried across cards */
+.phb-list li{transition:background-color .3s,padding-left .3s,margin .3s}
+.phb-list li:hover{background:var(--navy2);padding-left:30px}
+.phb-list li:hover:before{left:12px}
+.pa .pc2,.ft,.kc,.sc{transition:transform .3s,border-color .3s,background-color .3s,color .3s}
+.pa:hover .pc2{background:var(--navy2);border-color:var(--navy2)}
+.pa:hover .pc2 h3,.pa:hover .pc2 p,.pa:hover .pc2 .more{color:#fff}
+.ft:hover{background:var(--navy2);border-color:var(--navy2)}
+.ft:hover h3,.ft:hover p,.ft:hover .role,.ft:hover .more{color:#fff}
+.sc:hover{background:var(--navy2);border-color:var(--navy2)}
+.sc:hover p{color:#fff}
+.kc:hover{background:var(--navy2);border-color:var(--navy2)}
+.kc:hover .kb,.kc:hover .kb>span,.kc:hover .ttl{color:#fff}
+.kc:hover .kb .btn{background:#fff;color:var(--navy);border-color:#fff}
