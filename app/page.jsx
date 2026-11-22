@@ -33,24 +33,28 @@ export default function Home() {
       {/* WHO WE ARE */}
       <section className="fold" id="about">
         <div className="wrap">
-          <h2 className="h2 tab">Who<br />We Are</h2>
-          <div className="who" style={{ marginTop: 24 }}>
-            {WHO.map((para, i) => <p key={i}><Rich parts={para} /></p>)}
+          <h2 className="h2 tab">Who We Are</h2>
+          <div className="who2">
+            <p className="wlead">A full-service law firm in Nagpur, combining courtroom experience with modern legal advisory.</p>
+            <ul className="pts">
+              <li>The firm delivers <b>practical, reliable and enforceable legal solutions</b> to institutions, businesses, government bodies and individuals.</li>
+              <li>Every opinion is guided by one question: <b>will this stand the test of law if challenged tomorrow?</b></li>
+              <li>A structured legal institution with <b>defined practice areas, partner-led responsibilities</b> and standardised internal systems.</li>
+            </ul>
           </div>
           <Btn href="/the-firm">More about the firm</Btn>
         </div>
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="band on-navy" style={{ padding: '36px 0' }}>
-        <img className="band-art" src="/images/thinker.png" alt="" />
+      <section className="fold tint" id="philosophy">
         <div className="wrap">
-          <div>
-            <h2 className="h2 tab">Philosophy And<br />Working Approach</h2>
-            <p style={{ margin: '22px 0 10px' }}>{PHILOSOPHY.lead}</p>
-            <ul>{PHILOSOPHY.items.map((i) => <li key={i}>{i}</li>)}</ul>
-            <p className="q">{PHILOSOPHY.quote}</p>
+          <h2 className="h2 tab">Philosophy And Working Approach</h2>
+          <p style={{ margin: '20px 0 0', maxWidth: 560 }}>{PHILOSOPHY.lead}</p>
+          <div className="g-ph">
+            {PHILOSOPHY.items.map((i) => <div className="phc" key={i}><span aria-hidden="true" /><p>{i}</p></div>)}
           </div>
+          <p className="phq">{PHILOSOPHY.quote.replace(' ;', ';')}</p>
         </div>
       </section>
 
@@ -75,12 +79,16 @@ export default function Home() {
       </section>
 
       {/* WHY CLIENTS CHOOSE US */}
-      <section className="band on-navy why" style={{ padding: 0 }}>
-        <img className="why-img" src="/images/gavel.jpg" alt="" />
-        <div className="wrap" style={{ padding: '36px 20px' }}>
-          <div>
-            <h2 className="h2 tab">Why Clients<br />Choose Us</h2>
-            <ul style={{ marginTop: 24 }}>{WHY.map((i) => <li key={i}>{i}</li>)}</ul>
+      <section className="fold tint" id="why">
+        <div className="wrap">
+          <h2 className="h2 tab">Why Clients Choose Us</h2>
+          <div className="why-rows">
+            {WHY.map((w) => (
+              <div className="wr" key={w}>
+                <span className="ck" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5 9-10" /></svg></span>
+                <span>{w}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
