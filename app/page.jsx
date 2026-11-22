@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import LeadForm from '@/components/LeadForm';
 import { Arrow, Btn, BookIcon, MapPlaceholder } from '@/components/ui';
-import { AREAS, WHO, PHILOSOPHY, WHY, FOUNDERS, ARTICLES, SITE } from '@/lib/data';
+import { AREAS, WHO, WHO_SHORT, PHILOSOPHY, WHY, FOUNDERS, ARTICLES, SITE } from '@/lib/data';
 import { Rich, AreaIcon, FounderTile } from '@/components/blocks';
 
 export default function Home() {
@@ -49,13 +49,12 @@ export default function Home() {
       </section>
 
       {/* WHO WE ARE */}
-      <section className="fold tint" id="about">
-        <div className="wrap duo">
-          <div className="duo-art"><img src="/images/justice.png" alt="" /></div>
-          <div className="duo-tx">
+      <section className="fold bgsec bg-who" id="about">
+        <div className="wrap">
+          <div className="bgsec-tx">
             <h2 className="h2 tab">Who We Are</h2>
             <div className="prose2">
-              {WHO.map((para, i) => <p key={i}><Rich parts={para} /></p>)}
+              {WHO_SHORT.map((t, i) => <p key={i}>{t}</p>)}
             </div>
             <Btn href="/the-firm">More about the firm</Btn>
           </div>
@@ -88,9 +87,9 @@ export default function Home() {
       </section>
 
       {/* WHY CLIENTS CHOOSE US */}
-      <section className="fold tint" id="why">
-        <div className="wrap duo duo-r">
-          <div className="duo-tx">
+      <section className="fold bgsec bg-why" id="why">
+        <div className="wrap">
+          <div className="bgsec-tx">
             <h2 className="h2 tab">Why Clients Choose Us</h2>
             <div className="why-rows">
               {WHY.map((w) => (
@@ -101,7 +100,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="duo-art duo-photo"><img src="/images/gavel.jpg" alt="" /></div>
         </div>
       </section>
 

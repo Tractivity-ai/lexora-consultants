@@ -480,3 +480,22 @@ main b,main strong{font-weight:inherit!important}
 .kc:hover{background:var(--navy2);border-color:var(--navy2)}
 .kc:hover .kb,.kc:hover .kb>span,.kc:hover .ttl{color:#fff}
 .kc:hover .kb .btn{background:#fff;color:var(--navy);border-color:#fff}
+
+/* image sections with a colour fade */
+.bgsec{position:relative;overflow:hidden;isolation:isolate}
+.bgsec:before{content:"";position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center}
+.bg-who:before{background-image:linear-gradient(90deg,rgba(238,238,243,.97) 0%,rgba(238,238,243,.92) 50%,rgba(238,238,243,.72) 100%),url(/images/courtroom.jpg);background-position:center,50% 88%}
+.bg-why:before{background-image:linear-gradient(90deg,rgba(238,238,243,.97) 0%,rgba(238,238,243,.9) 48%,rgba(238,238,243,.55) 100%),url(/images/gavel.jpg);background-position:center,70% 55%}
+.bgsec-tx{max-width:620px}
+.bg-who{background:var(--paper)}
+/* philosophy, lighter */
+.phb{background:linear-gradient(120deg,#3C4477 0%,#4D5690 100%)}
+.phb-list li{border-top-color:rgba(255,255,255,.2)}
+.phb-list li:last-child{border-bottom-color:rgba(255,255,255,.2)}
+.phb-list li:hover{background:var(--navy)}
+.on-navy .h2.tab:before{background:rgba(255,255,255,.14)}
+/* subtle section tint on hover, all sections */
+.fold,.phb{transition:background-color .45s}
+.fold:hover{background-color:#F5F6FA}
+.fold.tint:hover{background-color:#E7E8F0}
+.phb:hover{background:linear-gradient(120deg,#363E70 0%,#474F88 100%)}
