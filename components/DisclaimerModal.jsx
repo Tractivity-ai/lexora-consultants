@@ -8,7 +8,7 @@ export default function DisclaimerModal() {
   const [declined, setDeclined] = useState(false);
 
   useEffect(() => {
-    try { if (localStorage.getItem(KEY) === 'yes') setOpen(false); } catch {}
+    try { if (sessionStorage.getItem(KEY) === 'yes') setOpen(false); } catch {}
   }, []);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function DisclaimerModal() {
   if (!open) return null;
 
   const accept = () => {
-    try { localStorage.setItem(KEY, 'yes'); } catch {}
+    try { sessionStorage.setItem(KEY, 'yes'); } catch {}
     setOpen(false);
   };
 

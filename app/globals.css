@@ -253,7 +253,7 @@ textarea.fld{min-height:110px;resize:vertical}
 }
 
 /* disclaimer modal */
-.dsc{position:fixed;inset:0;z-index:100;background:rgba(20,20,20,.62);display:flex;align-items:center;justify-content:center;padding:14px}
+.dsc{position:fixed;inset:0;z-index:100;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:14px}
 .dsc-card{background:#fff;border:1px solid var(--rule);border-radius:4px;width:100%;max-width:420px;max-height:100%;overflow:auto;padding:24px 20px;animation:up .5s ease both}
 .dsc-card img{display:block;height:36px;width:auto}
 .dsc-card ul{margin:10px 0 0;padding-left:20px;font-size:14px;line-height:1.55}
@@ -423,3 +423,14 @@ main b,main strong{font-weight:inherit}
 .wr,.phc p{font-weight:400}
 @media(min-width:900px){.g-who{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.g-who .sc,.g-ph .sc{padding:22px}}
 main b,main strong{font-weight:inherit!important}
+
+/* hover on content cards */
+.sc{transition:transform .3s,border-color .3s,background-color .3s}
+.sc:hover{transform:translateY(-4px);border-color:var(--navy);background:#fff}
+/* hero fills the first fold */
+.herofold{min-height:calc(100svh - 65px)}
+.hero{flex:1;display:flex;align-items:stretch}
+.hero-in{display:flex;flex-direction:column;justify-content:center;width:100%}
+.hero-btns{margin-top:22px}
+@media(min-width:900px){.herofold{min-height:calc(100svh - 77px)}.hero{min-height:0}}
+.hero h1 em{font-style:normal}

@@ -16,8 +16,7 @@ export default function Home() {
           <div className="hero-in">
             <div className="hero-copy">
               <p className="eyebrow up">Advocates &amp; Consultants · Nagpur</p>
-              <h1 className="up">Committed to protecting your rights <em>with precision and dedication.</em></h1>
-              <p className="addr up" style={{ animationDelay: '.1s' }}>{SITE.address[0]} {SITE.address[1]}</p>
+              <h1 className="up">Committed to protecting your rights with precision and dedication.</h1>
               <div className="hero-btns up" style={{ animationDelay: '.18s' }}>
                 <Btn href="/practice-areas" className="btn btn-w">Practice areas</Btn>
                 <Btn href="/contact" className="btn btn-ow">Contact the office</Btn>
@@ -28,6 +27,26 @@ export default function Home() {
         </section>
         <div className="formbar only-d"><div className="wrap"><LeadForm variant="bar" /></div></div>
       </div>
+
+      {/* PRACTICE AREAS */}
+      <section className="fold" id="practice">
+        <div className="wrap">
+          <h2 className="h2 tab">Practice Areas &amp; Services</h2>
+          <div className="g-pa">
+            {AREAS.map((a, i) => (
+              <div className="pa" key={a.slug} style={{ animationDelay: `${0.04 + i * 0.05}s` }}>
+                <span className="num">{a.n}</span>
+                <span className="pi"><AreaIcon d={a.icon} /></span>
+                <Link href={`/practice-areas/${a.slug}`} className="pc2">
+                  <h3>{a.t.replace(/:$/, '')}</h3>
+                  <p>{a.short}</p>
+                  <span className="more">Read more<Arrow /></span>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* WHO WE ARE */}
       <section className="fold" id="about">
@@ -49,26 +68,6 @@ export default function Home() {
             {PHILOSOPHY.items.map((i) => <div className="sc" key={i}><p>{i}</p></div>)}
           </div>
           <p className="phq">{PHILOSOPHY.quote.replace(' ;', ';')}</p>
-        </div>
-      </section>
-
-      {/* PRACTICE AREAS */}
-      <section className="fold" id="practice">
-        <div className="wrap">
-          <h2 className="h2 tab">Practice Areas &amp; Services</h2>
-          <div className="g-pa">
-            {AREAS.map((a, i) => (
-              <div className="pa" key={a.slug} style={{ animationDelay: `${0.04 + i * 0.05}s` }}>
-                <span className="num">{a.n}</span>
-                <span className="pi"><AreaIcon d={a.icon} /></span>
-                <Link href={`/practice-areas/${a.slug}`} className="pc2">
-                  <h3>{a.t.replace(/:$/, '')}</h3>
-                  <p>{a.short}</p>
-                  <span className="more">Read more<Arrow /></span>
-                </Link>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
