@@ -2,7 +2,7 @@ import Link from 'next/link';
 import LeadForm from '@/components/LeadForm';
 import { Arrow, Btn, BookIcon, MapPlaceholder } from '@/components/ui';
 import { AREAS, WHO, PHILOSOPHY, WHY, FOUNDERS, ARTICLES, SITE } from '@/lib/data';
-import { Rich, AreaIcon, FounderCard } from '@/components/blocks';
+import { Rich, AreaIcon, FounderTile } from '@/components/blocks';
 
 export default function Home() {
   return (
@@ -63,10 +63,8 @@ export default function Home() {
                 <span className="num">{a.n}</span>
                 <span className="pi"><AreaIcon d={a.icon} /></span>
                 <Link href={`/practice-areas/${a.slug}`} className="pc2">
-                  <h3>{a.t}</h3>
-                  <p>{a.d}</p>
-                  <p className="inc">Which includes but not limited to:</p>
-                  <ul>{a.inc.map((x) => <li key={x}>{x}</li>)}</ul>
+                  <h3>{a.t.replace(/:$/, '')}</h3>
+                  <p>{a.short}</p>
                   <span className="more">Read more<Arrow /></span>
                 </Link>
               </div>
@@ -91,7 +89,7 @@ export default function Home() {
         <div className="wrap">
           <h2 className="h2 tab">Founders<br />Details</h2>
           <div className="g-fo">
-            {FOUNDERS.map((f, i) => <FounderCard key={f.id} f={f} delay={i * 0.08} />)}
+            {FOUNDERS.map((f, i) => <FounderTile key={f.id} f={f} delay={i * 0.08} />)}
           </div>
         </div>
       </section>
