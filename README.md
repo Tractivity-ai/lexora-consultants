@@ -15,8 +15,8 @@ npm run build && npm start
 3. Optional: add `ENQUIRY_WEBHOOK_URL` (Zapier, Make, Slack or any webhook) under Project Settings, Environment Variables. Without it, enquiries are only written to the server log.
 
 ## Before going live
-- `[PIN]`, `[professional email]` and `[confirm]` (office hours) placeholders: `lib/data.js`
-- Hero image `public/images/hero.jpg` is a watermarked stock preview. License or replace it.
+- `[confirm]` office hours placeholder: `lib/data.js`
+- Brand, content and images come from the company profile PDF (navy #272A67, Montserrat, statues and courtroom photos extracted from it).
 - Advocate photos are enlarged crops of office photos. Replace with high resolution portraits in `public/images/`.
 - Logo is a low resolution crop. Replace with the SVG master.
 - Know Your Law article titles, dates and excerpts are drafts for the advocates to review. Article pages are not built yet.

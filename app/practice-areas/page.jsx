@@ -1,33 +1,26 @@
 import Link from 'next/link';
-import { Arrow, Icon } from '@/components/ui';
-import { AREAS, TAX } from '@/lib/data';
-
+import Band from '@/components/Band';
+import { Arrow } from '@/components/ui';
+import { AreaIcon } from '@/components/blocks';
+import { AREAS } from '@/lib/data';
 export const metadata = { title: 'Practice areas | Lexora Advocates & Consultants' };
-const VAR = ['va', 'vb', 'vc'];
-
 export default function PracticeAreas() {
-  return (
-    <>
-      <div className="titleband"><div className="wrap">
-        <div className="crumbs"><Link href="/">Home</Link> / Practice areas</div>
-        <h1>Practice areas</h1>
-      </div></div>
-      <section className="fold" style={{ borderTop: 0 }}><div className="wrap">
-        <div className="grid g-areas" style={{ marginTop: 0 }}>
-          {AREAS.map((a, i) => (
-            <Link key={a.slug} href={`/practice-areas/${a.slug}`} className={`card ${VAR[i % 3]}`}>
-              <span className="tile"><Icon f={a.f} p={a.p} /></span>
-              <span className="ct"><span className="h3" style={{ display: 'block' }}>{a.t}</span><p>{a.d}</p></span>
-              <Arrow /><span className="bar" />
+  return (<>
+    <Band title="Practice Areas & Services" trail="Practice areas" />
+    <section className="fold" style={{ borderTop: 0 }}><div className="wrap">
+      <div className="g-pa" style={{ marginTop: 0 }}>
+        {AREAS.map((a, i) => (
+          <div className="pa" key={a.slug} style={{ animationDelay: `${0.04 + i * 0.05}s` }}>
+            <span className="num">{a.n}</span><span className="pi"><AreaIcon d={a.icon} /></span>
+            <Link href={`/practice-areas/${a.slug}`} className="pc2">
+              <h3>{a.t}</h3><p>{a.d}</p>
+              <p className="inc">Which includes but not limited to:</p>
+              <ul>{a.inc.map((x) => <li key={x}>{x}</li>)}</ul>
+              <span className="more">Read more<Arrow /></span>
             </Link>
-          ))}
-        </div>
-        <Link href="/practice-areas/tax-and-compliance" className="card wide tint" style={{ background: '#E7E5E0', borderColor: '#CFCCC5' }}>
-          <span className="tile" style={{ background: '#F6F5F2', borderColor: '#CFCCC5' }}><Icon f={TAX.f} p={TAX.p} fill="#CFCCC5" /></span>
-          <span className="ct"><span className="h3" style={{ display: 'block' }}>Tax and compliance</span><p style={{ color: '#4A4A4A' }}>GST registration and returns, notices and appeals, income tax returns, tax audit and statutory compliance.</p></span>
-          <Arrow />
-        </Link>
-      </div></section>
-    </>
-  );
+          </div>
+        ))}
+      </div>
+    </div></section>
+  </>);
 }

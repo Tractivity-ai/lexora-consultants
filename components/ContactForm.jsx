@@ -26,7 +26,7 @@ export default function ContactForm() {
       <label className="consent" style={{ marginTop: 14, alignItems: 'flex-start' }}><input type="checkbox" name="consent" required />I agree to be contacted and accept the privacy policy.</label>
       <button type="submit" className="btn btn-k" style={{ marginTop: 16 }} disabled={state === 'sending'}>Send enquiry</button>
       {state === 'done' && <p className="lead-ok" role="status">Thank you. The office will be in touch.</p>}
-      {state === 'error' && <p className="lead-err" role="alert">Something went wrong. Please call +91 73049 16240.</p>}
+      {state === 'error' && <p className="lead-err" role="alert">Something went wrong. Please call 7304916240.</p>}
     </form>
   );
 }

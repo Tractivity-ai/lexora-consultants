@@ -59,7 +59,7 @@ export default function LeadForm({ variant = 'compact', className = '' }) {
         I agree to be contacted and accept the privacy policy. Please do not share confidential details.
       </label>
       {state === 'done' && <p className="lead-ok" role="status">Thank you. The office will be in touch.</p>}
-      {state === 'error' && <p className="lead-err" role="alert">Something went wrong. Please call +91 73049 16240.</p>}
+      {state === 'error' && <p className="lead-err" role="alert">Something went wrong. Please call 7304916240.</p>}
     </form>
   );
 }

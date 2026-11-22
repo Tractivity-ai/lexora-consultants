@@ -26,7 +26,7 @@ export default function DisclaimerModal() {
   return (
     <div className="dsc" role="dialog" aria-modal="true" aria-labelledby="dsct">
       <div className="dsc-card">
-        <img src="/images/logo.png" alt="Lexora Advocates and Consultants" />
+        <img src="/images/logo-navy.png" alt="Lexora Advocates and Consultants" />
         {!declined ? (
           <>
             <h2 className="h2" id="dsct" style={{ marginTop: 18 }}>Disclaimer and confirmation</h2>
