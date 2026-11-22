@@ -7,13 +7,13 @@ export default function Firm() {
   return (<>
     <Band title="The Firm" />
     <section className="fold" style={{ borderTop: 0 }}><div className="wrap">
-      <h2 className="h2 tab">Who<br />We Are</h2>
+      <h2 className="h2 tab">Who We Are</h2>
       <div className="who" style={{ marginTop: 24 }}>{WHO.map((p, i) => <p key={i}><Rich parts={p} /></p>)}</div>
     </div></section>
     <section className="band on-navy" style={{ padding: '36px 0' }}>
       <img className="band-art" src="/images/thinker.png" alt="" />
       <div className="wrap"><div>
-        <h2 className="h2 tab">Philosophy And<br />Working Approach</h2>
+        <h2 className="h2 tab">Philosophy And Working Approach</h2>
         <p style={{ margin: '22px 0 10px' }}>{PHILOSOPHY.lead}</p>
         <ul>{PHILOSOPHY.items.map((i) => <li key={i}>{i}</li>)}</ul>
         <p className="q">{PHILOSOPHY.quote}</p>
@@ -22,7 +22,7 @@ export default function Firm() {
     <section className="band on-navy why" style={{ padding: 0, marginTop: 1 }}>
       <img className="why-img" src="/images/gavel.jpg" alt="" />
       <div className="wrap" style={{ padding: '36px 20px' }}><div>
-        <h2 className="h2 tab">Why Clients<br />Choose Us</h2>
+        <h2 className="h2 tab">Why Clients Choose Us</h2>
         <ul style={{ marginTop: 24 }}>{WHY.map((i) => <li key={i}>{i}</li>)}</ul>
       </div></div>
     </section>

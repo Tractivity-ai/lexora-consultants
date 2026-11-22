@@ -33,13 +33,8 @@ export default function Home() {
       <section className="fold" id="about">
         <div className="wrap">
           <h2 className="h2 tab">Who We Are</h2>
-          <div className="who2">
-            <p className="wlead">A full-service law firm in Nagpur, combining courtroom experience with modern legal advisory.</p>
-            <ul className="pts">
-              <li>The firm delivers <b>practical, reliable and enforceable legal solutions</b> to institutions, businesses, government bodies and individuals.</li>
-              <li>Every opinion is guided by one question: <b>will this stand the test of law if challenged tomorrow?</b></li>
-              <li>A structured legal institution with <b>defined practice areas, partner-led responsibilities</b> and standardised internal systems.</li>
-            </ul>
+          <div className="g-who">
+            {WHO.map((para, i) => <div className="sc" key={i}><p><Rich parts={para} /></p></div>)}
           </div>
           <Btn href="/the-firm">More about the firm</Btn>
         </div>
@@ -51,7 +46,7 @@ export default function Home() {
           <h2 className="h2 tab">Philosophy And Working Approach</h2>
           <p style={{ margin: '20px 0 0', maxWidth: 560 }}>{PHILOSOPHY.lead}</p>
           <div className="g-ph">
-            {PHILOSOPHY.items.map((i) => <div className="phc" key={i}><span aria-hidden="true" /><p>{i}</p></div>)}
+            {PHILOSOPHY.items.map((i) => <div className="sc" key={i}><p>{i}</p></div>)}
           </div>
           <p className="phq">{PHILOSOPHY.quote.replace(' ;', ';')}</p>
         </div>
@@ -60,7 +55,7 @@ export default function Home() {
       {/* PRACTICE AREAS */}
       <section className="fold" id="practice">
         <div className="wrap">
-          <h2 className="h2 tab">Practice Areas<br />&amp; Services</h2>
+          <h2 className="h2 tab">Practice Areas &amp; Services</h2>
           <div className="g-pa">
             {AREAS.map((a, i) => (
               <div className="pa" key={a.slug} style={{ animationDelay: `${0.04 + i * 0.05}s` }}>
@@ -95,7 +90,7 @@ export default function Home() {
       {/* FOUNDERS */}
       <section className="fold" id="founders">
         <div className="wrap">
-          <h2 className="h2 tab">Founders<br />Details</h2>
+          <h2 className="h2 tab">Founders Details</h2>
           <div className="g-fo">
             {FOUNDERS.map((f, i) => <FounderTile key={f.id} f={f} delay={i * 0.08} />)}
           </div>
@@ -105,7 +100,7 @@ export default function Home() {
       {/* KNOW YOUR LAW */}
       <section className="fold" id="know">
         <div className="wrap">
-          <h2 className="h2 tab">Know<br />Your Law</h2>
+          <h2 className="h2 tab">Know Your Law</h2>
           <div className="g-know">
             {ARTICLES.map((a, i) => (
               <Link href={`/knowledge-centre/${a.slug}`} className="kc" key={a.t} style={{ animationDelay: `${i * 0.08}s` }}>
