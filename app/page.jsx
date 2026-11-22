@@ -49,39 +49,15 @@ export default function Home() {
       </section>
 
       {/* WHO WE ARE */}
-      <section className="fold" id="about">
-        <div className="wrap">
-          <h2 className="h2 tab">Who We Are</h2>
-          <div className="g-who">
-            {WHO.map((para, i) => <div className="sc" key={i}><p><Rich parts={para} /></p></div>)}
-          </div>
-          <Btn href="/the-firm">More about the firm</Btn>
-        </div>
-      </section>
-
-      {/* PHILOSOPHY */}
-      <section className="fold tint" id="philosophy">
-        <div className="wrap">
-          <h2 className="h2 tab">Philosophy And Working Approach</h2>
-          <p style={{ margin: '20px 0 0', maxWidth: 560 }}>{PHILOSOPHY.lead}</p>
-          <div className="g-ph">
-            {PHILOSOPHY.items.map((i) => <div className="sc" key={i}><p>{i}</p></div>)}
-          </div>
-          <p className="phq">{PHILOSOPHY.quote.replace(' ;', ';')}</p>
-        </div>
-      </section>
-
-      {/* WHY CLIENTS CHOOSE US */}
-      <section className="fold tint" id="why">
-        <div className="wrap">
-          <h2 className="h2 tab">Why Clients Choose Us</h2>
-          <div className="why-rows">
-            {WHY.map((w) => (
-              <div className="wr" key={w}>
-                <span className="ck" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5 9-10" /></svg></span>
-                <span>{w}</span>
-              </div>
-            ))}
+      <section className="fold tint" id="about">
+        <div className="wrap duo">
+          <div className="duo-art"><img src="/images/justice.png" alt="" /></div>
+          <div className="duo-tx">
+            <h2 className="h2 tab">Who We Are</h2>
+            <div className="prose2">
+              {WHO.map((para, i) => <p key={i}><Rich parts={para} /></p>)}
+            </div>
+            <Btn href="/the-firm">More about the firm</Btn>
           </div>
         </div>
       </section>
@@ -93,6 +69,39 @@ export default function Home() {
           <div className="g-fo">
             {FOUNDERS.map((f, i) => <FounderTile key={f.id} f={f} delay={i * 0.08} />)}
           </div>
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
+      <section className="phb on-navy" id="philosophy">
+        <div className="wrap phb-in">
+          <div className="phb-tx">
+            <h2 className="h2 tab">Philosophy And Working Approach</h2>
+            <p className="phb-lead">{PHILOSOPHY.lead}</p>
+            <ul className="phb-list">
+              {PHILOSOPHY.items.map((i) => <li key={i}>{i}</li>)}
+            </ul>
+            <p className="phb-q">{PHILOSOPHY.quote.replace(' ;', ';')}</p>
+          </div>
+          <img className="phb-art" src="/images/thinker.png" alt="" />
+        </div>
+      </section>
+
+      {/* WHY CLIENTS CHOOSE US */}
+      <section className="fold tint" id="why">
+        <div className="wrap duo duo-r">
+          <div className="duo-tx">
+            <h2 className="h2 tab">Why Clients Choose Us</h2>
+            <div className="why-rows">
+              {WHY.map((w) => (
+                <div className="wr" key={w}>
+                  <span className="ck" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5 9-10" /></svg></span>
+                  <span>{w}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="duo-art duo-photo"><img src="/images/gavel.jpg" alt="" /></div>
         </div>
       </section>
 
