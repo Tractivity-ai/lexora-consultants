@@ -499,3 +499,14 @@ main b,main strong{font-weight:inherit!important}
 .fold:hover{background-color:#F5F6FA}
 .fold.tint:hover{background-color:#E7E8F0}
 .phb:hover{background:linear-gradient(120deg,#363E70 0%,#474F88 100%)}
+
+/* image only on part of the section, fading into the background */
+.bgsec:before{inset:auto 0 0 0;height:150px;background-size:cover;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 70%);mask-image:linear-gradient(180deg,transparent 0%,#000 70%);opacity:.9}
+.bg-who:before{background-image:url(/images/courtroom.jpg);background-position:50% 85%}
+.bg-why:before{background-image:url(/images/gavel.jpg);background-position:50% 60%}
+.bgsec .wrap{position:relative}
+.bgsec{padding-bottom:170px}
+@media(min-width:900px){
+ .bgsec{padding-bottom:0}
+ .bgsec:before{inset:0 0 0 auto;width:42%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 60%);mask-image:linear-gradient(90deg,transparent 0%,#000 60%)}
+}
