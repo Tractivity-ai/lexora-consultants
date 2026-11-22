@@ -410,3 +410,8 @@ details p{margin:0;padding:0 16px 16px}
 .wr{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-top:1px solid var(--blue);font-size:15px;font-weight:500;line-height:1.5}
 .wr .ck{flex:none;width:24px;height:24px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}
 @media(min-width:900px){.g-ph{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.who2 .wlead{font-size:24px}.phq{font-size:20px}}
+
+/* portraits on white: blend into the card colour */
+.ft .ph img,.fo .ph img,.pf-ph img{mix-blend-mode:multiply;object-position:50% 0%}
+.ft .ph,.pf-ph{background:var(--blue)}
+@media(min-width:900px){.ft .ph{height:270px}}
