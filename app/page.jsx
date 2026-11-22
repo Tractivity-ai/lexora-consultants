@@ -13,7 +13,6 @@ export default function Home() {
           <div className="hero-art" aria-hidden="true">
             <img className="room" src="/images/courtroom.jpg" alt="" />
           </div>
-          <span className="scrl only-d" aria-hidden="true">Scroll</span>
           <div className="hero-in">
             <div className="hero-copy">
               <p className="eyebrow up">Advocates &amp; Consultants · Nagpur</p>
