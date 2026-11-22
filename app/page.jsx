@@ -12,11 +12,12 @@ export default function Home() {
         <section className="hero">
           <div className="hero-art" aria-hidden="true">
             <img className="room" src="/images/courtroom.jpg" alt="" />
-            <img className="statue" src="/images/justice.png" alt="" />
           </div>
+          <span className="scrl only-d" aria-hidden="true">Scroll</span>
           <div className="hero-in">
             <div className="hero-copy">
-              <h1 className="up">Committed to protecting your rights with precision and dedication.</h1>
+              <p className="eyebrow up">Advocates &amp; Consultants · Nagpur</p>
+              <h1 className="up">Committed to protecting your rights <em>with precision and dedication.</em></h1>
               <p className="addr up" style={{ animationDelay: '.1s' }}>{SITE.address[0]} {SITE.address[1]}</p>
               <div className="hero-btns up" style={{ animationDelay: '.18s' }}>
                 <Btn href="/practice-areas" className="btn btn-w">Practice areas</Btn>
