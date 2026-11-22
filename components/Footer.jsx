@@ -5,6 +5,17 @@ const Col = ({ title, items }) => (
   <div className="col"><b>{title}</b>{items.map(([l, h]) => <Link key={l} href={h}>{l}</Link>)}</div>
 );
 
+const FOOT = {
+  'banking-finance-recovery': 'Banking, Finance & Recovery',
+  'property-land-due-diligence': 'Property & Land Due Diligence',
+  'civil-commercial-criminal-litigation': 'Litigation',
+  'government-psu-statutory-advisory': 'Government & PSU Advisory',
+  'corporate-msme-commercial-advisory': 'Corporate & MSME Advisory',
+  'real-estate-rera-project-advisory': 'Real Estate & RERA',
+  'family-law-matrimonial-disputes': 'Family Law',
+  'arbitration-mediation-conciliation': 'Arbitration & Mediation',
+};
+
 export default function Footer() {
   return (
     <footer className="ftr">
@@ -15,8 +26,8 @@ export default function Footer() {
             <p style={{ margin: '16px 0 0', fontSize: 14 }}>Committed to protecting your rights with precision and dedication.</p>
           </div>
           <div className="cols">
-            <Col title="The Firm" items={[['The Firm', '/the-firm'], ['Our People', '/our-people'], ['Knowledge Centre', '/knowledge-centre'], ['Careers', '/careers'], ['Contact', '/contact']]} />
-            <Col title="Practice" items={AREAS.slice(0, 5).map((a) => [a.t.replace(/:$/, '').split(' ').slice(0, 3).join(' '), `/practice-areas/${a.slug}`])} />
+            <Col title="Explore" items={[['The Firm', '/the-firm'], ['Our People', '/our-people'], ['Knowledge Centre', '/knowledge-centre'], ['Careers', '/careers'], ['Contact', '/contact']]} />
+            <Col title="Practice" items={AREAS.slice(0, 8).map((a) => [FOOT[a.slug], `/practice-areas/${a.slug}`])} />
           </div>
           <div className="off">
             <b>Contact</b>

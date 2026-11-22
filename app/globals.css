@@ -522,3 +522,9 @@ main b,main strong{font-weight:inherit!important}
  .bgsec .wrap{padding-top:40px;padding-bottom:40px}
  .bgsec .wrap:before{left:auto;right:20px;top:0;bottom:0;width:42%;height:auto;border-radius:0 14px 14px 0;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 60%);mask-image:linear-gradient(90deg,transparent 0%,#000 60%)}
 }
+
+/* mobile: the hero itself fills the first screen, so the photo covers all of it */
+.herofold{min-height:0}
+.hero{min-height:calc(100svh - 65px)}
+@media(min-width:900px){.hero{min-height:640px}}
+@media(max-width:899px){.ftr{padding-bottom:84px}}
