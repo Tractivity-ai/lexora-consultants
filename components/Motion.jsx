@@ -26,7 +26,7 @@ export default function Motion() {
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
     els.forEach((el) => {
       // clipped elements report no visible area, so those are watched through their parent
-      const clipped = ['wipe', 'curtain'].includes(el.getAttribute('data-rv')) && el.parentElement;
+      const clipped = ['wipe', 'curtain', 'rise'].includes(el.getAttribute('data-rv')) && el.parentElement;
       const t = clipped ? el.parentElement : el;
       if (!watch.has(t)) { watch.set(t, []); io.observe(t); }
       watch.get(t).push(el);
