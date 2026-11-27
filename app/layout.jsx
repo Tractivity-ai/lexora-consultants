@@ -1,7 +1,7 @@
 import { Source_Serif_4, Source_Sans_3 } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import SiteFooter from '@/components/SiteFooter';
 import StickyCTA from '@/components/StickyCTA';
 import DisclaimerModal from '@/components/DisclaimerModal';
 import Motion from '@/components/Motion';
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         <main>{children}</main>
-        <Footer />
+        <SiteFooter />
         <StickyCTA />
         <DisclaimerModal />
         <Motion />

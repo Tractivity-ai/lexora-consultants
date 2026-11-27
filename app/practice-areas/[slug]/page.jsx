@@ -31,7 +31,7 @@ export default function Area({ params }) {
         <div style={{ marginTop: 14 }}><Btn href="/contact" className="btn btn-k">Send an enquiry</Btn></div>
         <h3 className="h3" style={{ marginTop: 24, fontSize: 15 }}>Practice areas</h3>
         <ul className="list" style={{ listStyle: 'none', paddingLeft: 0, fontSize: 14 }}>
-          {AREAS.map((x) => (<li key={x.slug}><Link href={`/practice-areas/${x.slug}`} style={{ fontWeight: x.slug === a.slug ? 700 : 500 }}>{x.n}. {x.t.replace(/:$/, '')}</Link></li>))}
+          {AREAS.map((x) => (<li key={x.slug}><Link href={`/practice-areas/${x.slug}`} style={{ fontWeight: x.slug === a.slug ? 700 : 500 }}>{x.t.replace(/:$/, '')}</Link></li>))}
         </ul>
       </aside>
     </div></section>

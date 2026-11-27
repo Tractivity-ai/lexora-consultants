@@ -17,6 +17,7 @@ export default function Header() {
     let last = window.scrollY, stuck = false, hid = false, tick = false;
     const run = () => {
       tick = false;
+      if (document.documentElement.classList.contains('op')) return;
       const y = window.scrollY;
       const th = Math.max(window.innerHeight * 0.85, 420);
       if (!stuck && y > th) {
@@ -36,10 +37,20 @@ export default function Header() {
       if (prog.current) prog.current.style.transform = `scaleX(${h > 0 ? Math.min(y / h, 1) : 0})`;
     };
     const onScroll = () => { if (!tick) { tick = true; requestAnimationFrame(run); } };
+    // one-page mode: the panel index drives the header (static on the first panel, compact bar after)
+    const onIdx = (e) => {
+      const { index, step, total } = e.detail;
+      if (index < 0) { run(); return; }
+      el.classList.toggle('is-stuck', index > 0);
+      el.classList.remove('is-hidden');
+      if (index > 0) requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('is-ready'))); else el.classList.remove('is-ready');
+      if (prog.current) prog.current.style.transform = `scaleX(${total > 1 ? step / (total - 1) : 0})`;
+    };
+    window.addEventListener('op:index', onIdx);
     run();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
-    return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); };
+    return () => { window.removeEventListener('op:index', onIdx); window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); };
   }, []);
 
   useEffect(() => {
@@ -94,7 +105,7 @@ export default function Header() {
           {NAV.map((n, i) => (
             <div className="cur-li" key={n.label}>
               <Link href={n.href} style={{ '--i': i }} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
-                <span className="cur-n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>{n.label}
+                {n.label}
               </Link>
             </div>
           ))}

@@ -11,7 +11,7 @@ export default function PracticeAreas() {
       <div className="g-pa" style={{ marginTop: 0 }}>
         {AREAS.map((a, i) => (
           <div className="pa" key={a.slug} style={{ animationDelay: `${0.04 + i * 0.05}s` }}>
-            <span className="num">{a.n}</span><span className="pi"><AreaIcon d={a.icon} /></span>
+            <span className="pi"><AreaIcon d={a.icon} /></span>
             <Link href={`/practice-areas/${a.slug}`} className="pc2">
               <h3>{a.t}</h3><p>{a.d}</p>
               <p className="inc">Which includes but not limited to:</p>
