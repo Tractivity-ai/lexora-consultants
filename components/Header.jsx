@@ -1,10 +1,12 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { NAV, SITE } from '@/lib/data';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const home = usePathname() === '/';
   const hdr = useRef(null);
   const prog = useRef(null);
   const closeBtn = useRef(null);
@@ -19,6 +21,11 @@ export default function Header() {
       tick = false;
       if (document.documentElement.classList.contains('op')) return;
       const y = window.scrollY;
+      if (el.classList.contains('tn')) {
+        let tone = 'dark';
+        document.querySelectorAll('[data-tone]').forEach((n) => { const r = n.getBoundingClientRect(); if (r.top <= 36 && r.bottom > 36) tone = (window.innerWidth < 900 && n.dataset.toneM) || n.dataset.tone; });
+        el.dataset.tone = tone;
+      }
       const th = Math.max(window.innerHeight * 0.85, 420);
       if (!stuck && y > th) {
         stuck = true; hid = true; last = y;
@@ -73,7 +80,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="hdr" ref={hdr}>
+      <header className={`hdr${home ? ' tn' : ''}`} ref={hdr}>
         <div className="hdr-bar">
           <div className="wrap hdr-in">
             <Link href="/" aria-label="Lexora Advocates and Consultants, home" className="lg">

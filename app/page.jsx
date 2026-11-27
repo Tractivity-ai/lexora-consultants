@@ -61,7 +61,7 @@ export default function Home() {
           </section>
 
           {/* WHO WE ARE */}
-          <section className="fd fd-half fd-r" id="about" data-tone="light" data-ch="Who we are" style={bg('/images/statue.jpg', { '--bgp': '30% 40%' })}>
+          <section className="fd fd-half fd-r" id="about" data-tone="light" data-tone-m="dark" data-ch="Who we are" style={bg('/images/statue.jpg', { '--bgp': '30% 40%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in">
               <div className="mk"><h2 className="h2" data-rv="rise">Who We Are</h2></div>
@@ -97,7 +97,7 @@ export default function Home() {
           </section>
 
           {/* WHY */}
-          <section className="fd fd-half fd-r fd-lt" id="why" data-tone="light" data-ch="Why clients choose us" style={bg('/images/suit.jpg', { '--bgp': '40% 30%' })}>
+          <section className="fd fd-half fd-r fd-lt" id="why" data-tone="light" data-tone-m="dark" data-ch="Why clients choose us" style={bg('/images/suit.jpg', { '--bgp': '40% 30%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in">
               <div className="mk"><h2 className="h2" data-rv="rise">Why Clients Choose Us</h2></div>

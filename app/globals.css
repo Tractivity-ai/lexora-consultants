@@ -744,3 +744,83 @@ html.op .hdr.is-stuck.is-hidden[data-tone="light"] .lg-w{display:none!important}
 html.op .hdr.is-stuck.is-hidden[data-tone="light"] .lg-n{display:block}
 html.op .hdr.is-stuck.is-hidden[data-tone="dark"] .lg-n{display:none}
 html.op .hdr.is-stuck.is-hidden[data-tone="dark"] .lg-w{display:block!important}
+
+
+/* ===== round 4: phone gets the same treatment ===== */
+@media(max-width:899px){
+ html:has(.fd){scroll-snap-type:y proximity}
+ .fd{min-height:100svh;display:flex;flex-direction:column;scroll-snap-align:start}
+ .fd-pn{flex:1;display:flex;flex-direction:column;justify-content:center;padding:84px 20px 96px}
+ .fd-half .fd-pn{background:linear-gradient(180deg,rgba(30,33,40,.18) 0,rgba(30,33,40,.8) 150px,rgba(30,33,40,.8) 100%);padding-top:150px}
+ .fd-half.fd-lt .fd-pn{background:linear-gradient(180deg,rgba(242,245,250,.2) 0,rgba(242,245,250,.9) 150px,rgba(242,245,250,.9) 100%)}
+ .fd-lt .fd-pn{background:rgba(242,245,250,.86)}
+ .fd-half.fd-lt .fd-pn{background:linear-gradient(180deg,rgba(242,245,250,.2) 0,rgba(242,245,250,.9) 150px,rgba(242,245,250,.9) 100%)}
+ /* hero: the banner is the whole first screen, text and enquiry sit on it */
+ .fd-hero .fd-img{display:block}
+ .hero-ph{display:none}
+ .fd-hero .fd-pn{flex:1;justify-content:flex-end;background:linear-gradient(180deg,rgba(24,26,32,.2) 0,rgba(24,26,32,.55) 38%,rgba(24,26,32,.88) 100%);padding:96px 20px 12px}
+ .fd-hero h1{font-size:34px}
+ .hero-strip{margin:0 14px 78px;padding:16px 16px 14px;border:1px solid rgba(255,255,255,.3);background:rgba(24,26,32,.62);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:2px;position:relative;z-index:3}
+ .hero-strip .lead.bar .bar-in{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:end}
+ .hero-strip .lead.bar .bar-t{grid-column:1/-1;flex:none}
+ .hero-strip .lead.bar .bar-t p{display:none}
+ .hero-strip .lead.bar .bar-f{flex:none}
+ .hero-strip .lead.bar .consent{margin-top:10px}
+ .fd-hero .hero-sub{margin-top:16px}
+ /* header: clear over the banner, then just logo + menu, colour follows the panel */
+ .hdr.tn:not(.is-stuck){position:absolute;top:0;left:0;right:0}
+ .hdr.tn:not(.is-stuck) .hdr-bar{background:transparent;border-color:transparent}
+ .hdr.tn:not(.is-stuck) .lg-n{display:none}
+ .hdr.tn:not(.is-stuck) .lg-w{display:block!important}
+ .hdr.tn:not(.is-stuck) .menu-b{color:#fff}
+ .hdr.tn.is-stuck{pointer-events:none}
+ .hdr.tn.is-stuck .hdr-bar{background:transparent;border-color:transparent;height:64px;transform:none!important}
+ .hdr.tn.is-stuck .hdr-prog{display:none}
+ .hdr.tn.is-stuck .lg,.hdr.tn.is-stuck .menu-b{pointer-events:auto}
+ .hdr.tn.is-stuck[data-tone="light"] .lg-w{display:none!important}
+ .hdr.tn.is-stuck[data-tone="light"] .lg-n{display:block}
+ .hdr.tn.is-stuck[data-tone="light"] .menu-b{color:#14161a}
+ .hdr.tn.is-stuck[data-tone="dark"] .lg-n{display:none}
+ .hdr.tn.is-stuck[data-tone="dark"] .lg-w{display:block!important}
+ .hdr.tn.is-stuck[data-tone="dark"] .menu-b{color:#fff}
+ /* side dots */
+ .rail{display:block;position:fixed;right:5px;top:50%;transform:translateY(-50%);z-index:35;mix-blend-mode:difference;color:#fff;opacity:0;pointer-events:none;transition:opacity .5s}
+ .rail.on{opacity:1;pointer-events:auto}
+ .rail ol{list-style:none;margin:0;padding:0;display:grid;gap:0}
+ .rail a{display:flex;align-items:center;justify-content:center;width:22px;height:24px}
+ .rail a span{display:none}
+ .rail a i{display:block;width:7px;height:7px;border:1px solid #fff;border-radius:50%;transition:background .3s,transform .3s}
+ .rail a.act i{background:#fff;transform:scale(1.4)}
+ .rail-m{display:none}
+ /* cards, phone tuning */
+ .fd .phb-list li{margin-left:calc(var(--i,0) * 7px);font-size:17px}
+ .fd .ft .ph{height:min(66vw,300px)}
+ .fd .ft .ph img{object-position:50% 12%}
+ .mo .fd .ft .ph img{filter:grayscale(1)}
+ .mo .fd .ft.in .ph img{filter:grayscale(0);transition:filter 1.8s ease .9s,transform 1.4s var(--ez)}
+ .wc-f{grid-column:auto}
+ .pg{min-height:116px}
+ .fd .pgrid,.why-g{gap:10px}
+}
+@media(min-width:900px) and (max-width:1179px){
+ .rail{display:block;position:fixed;right:6px;top:50%;transform:translateY(-50%);z-index:35;mix-blend-mode:difference;color:#fff;opacity:0;pointer-events:none;transition:opacity .5s}
+ .rail.on{opacity:1;pointer-events:auto}
+ .rail ol{list-style:none;margin:0;padding:0}
+ .rail a{display:flex;align-items:center;justify-content:center;width:24px;height:26px}
+ .rail a span{display:none}
+ .rail a i{display:block;width:8px;height:8px;border:1px solid #fff;border-radius:50%}
+ .rail a.act i{background:#fff;transform:scale(1.4)}
+ html.op .rail-m{display:flex;flex-direction:column;gap:4px;align-items:center;width:34px;height:34px;justify-content:center;margin:0 auto 10px;background:none;border:0;cursor:pointer}
+ html.op .rail-m i{display:block;height:1.5px;background:#fff;width:20px}
+ html.op .rail-m i:nth-child(2){width:13px}
+}
+@media(max-width:899px){
+ .fd-hero{height:100svh;min-height:0;max-height:100svh}
+ .fd-hero .fd-pn{padding-top:76px;padding-bottom:8px;min-height:0}
+ .fd-hero h1{font-size:30px}
+ .fd-hero .eyebrow{margin-bottom:10px}
+ .fd-hero .fd-btns{margin-top:18px}
+ .fd-hero .hero-sub{display:none}
+ .hero-strip{margin-bottom:70px}
+}
+@media(max-width:899px){.hdr.tn{position:absolute;top:0;left:0;right:0;height:0}.hdr.tn:not(.is-stuck) .hdr-bar{position:absolute;top:0;left:0;right:0}}
