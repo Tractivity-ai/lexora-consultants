@@ -824,3 +824,15 @@ html.op .hdr.is-stuck.is-hidden[data-tone="dark"] .lg-w{display:block!important}
  .hero-strip{margin-bottom:70px}
 }
 @media(max-width:899px){.hdr.tn{position:absolute;top:0;left:0;right:0;height:0}.hdr.tn:not(.is-stuck) .hdr-bar{position:absolute;top:0;left:0;right:0}}
+
+/* phone: hard-landing sections and a plain, always-legible bar after the hero */
+@media(max-width:899px){
+ html:has(.fd){scroll-snap-type:y mandatory;scroll-padding-top:0}
+ .fd{scroll-snap-align:start;scroll-snap-stop:always}
+ .hdr.tn.is-stuck{pointer-events:auto}
+ .hdr.tn.is-stuck .hdr-bar{height:54px;background:rgba(24,26,32,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.12);transform:none!important}
+ .hdr.tn.is-stuck[data-tone] .lg-n{display:none}
+ .hdr.tn.is-stuck[data-tone] .lg-w{display:block!important}
+ .hdr.tn.is-stuck[data-tone] .menu-b{color:#fff}
+ .hdr.tn.is-stuck img{height:26px}
+}
