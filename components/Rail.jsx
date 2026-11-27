@@ -16,8 +16,8 @@ export default function Rail() {
       es.forEach((e) => { if (e.isIntersecting) setAct(els.indexOf(e.target)); });
     }, { rootMargin: '-45% 0px -50% 0px' });
     els.forEach((e) => io.observe(e));
-    const onIdx = (e) => { if (e.detail.index >= 0) setAct(e.detail.index); setOn(true); };
-    const onScroll = () => setOn(op() || window.scrollY > window.innerHeight * 0.7);
+    const onIdx = (e) => { if (e.detail.index >= 0) { setAct(e.detail.index); setOn(e.detail.index > 0); } };
+    const onScroll = () => { if (!op()) setOn(window.scrollY > window.innerHeight * 0.7); };
     onScroll();
     window.addEventListener('op:index', onIdx);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -31,6 +31,7 @@ export default function Rail() {
   if (!items.length) return null;
   return (
     <nav className={`rail${on ? ' on' : ''}`} aria-label="Sections on this page">
+      <button type="button" className="rail-m" aria-label="Open menu" onClick={() => window.dispatchEvent(new CustomEvent('lx:menu'))}><i /><i /><i /></button>
       <ol>
         {items.map((it, i) => (
           <li key={it.id}><a href={`#${it.id}`} onClick={(e) => click(e, it.id)} className={i === act ? 'act' : ''}><span>{it.label}</span><i /></a></li>

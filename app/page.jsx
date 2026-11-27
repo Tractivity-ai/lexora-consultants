@@ -2,14 +2,17 @@ import Link from 'next/link';
 import LeadForm from '@/components/LeadForm';
 import Rail from '@/components/Rail';
 import OnePage from '@/components/OnePage';
+import Fx from '@/components/Fx';
 import Footer from '@/components/Footer';
 import { Arrow, Btn, MapPlaceholder } from '@/components/ui';
 import { AREAS, WHO_SHORT, PHILOSOPHY, WHY, FOUNDERS, ARTICLES, SITE } from '@/lib/data';
-import { FounderTile } from '@/components/blocks';
+import { FounderTile, AreaIcon } from '@/components/blocks';
 
 const Ck = () => (
   <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12.4" /><path d="M7.5 13.5l4 4 7-8.5" /></svg>
 );
+const SP = [2, 1, 1, 1, 1, 2, 2, 2];
+const PV = ['f', 'o', 't', 't', 'o', 'f', 'o', 't'];
 const bg = (u, extra = {}) => ({ '--bg': `url(${u})`, ...extra });
 
 export default function Home() {
@@ -17,6 +20,7 @@ export default function Home() {
     <>
       <Rail />
       <OnePage />
+      <Fx />
       <div className="op-wrap">
         <div className="op-track">
 
@@ -40,15 +44,16 @@ export default function Home() {
           </section>
 
           {/* PRACTICE */}
-          <section className="fd fd-full" id="practice" data-ch="Practice areas" style={bg('/images/courtroom.jpg', { '--bgp': '50% 60%' })}>
+          <section className="fd fd-full fd-lt" id="practice" data-ch="Practice areas" style={bg('/images/courtroom.jpg', { '--bgp': '50% 60%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in fd-wide">
               <div className="mk"><h2 className="h2" data-rv="rise">Practice Areas &amp; Services</h2></div>
               <div className="pgrid">
                 {AREAS.map((a, i) => (
-                  <Link href={`/practice-areas/${a.slug}`} className="pg" key={a.slug} data-rv="up" style={{ '--d': `${(i % 2) * 0.06 + Math.floor(i / 2) * 0.08}s` }}>
+                  <Link href={`/practice-areas/${a.slug}`} className={`pg pg-${PV[i]}`} key={a.slug} data-rv="up" data-fx style={{ '--d': `${i * 0.09}s`, '--sp': SP[i] }}>
+                    <span className="pg-ic"><AreaIcon d={a.icon} size={30} /></span>
                     <span className="pg-b"><h3>{a.t.replace(/:$/, '')}</h3><p>{a.short}</p></span>
-                    <Arrow />
+                    <span className="pg-go"><Arrow /></span>
                   </Link>
                 ))}
               </div>
@@ -68,7 +73,7 @@ export default function Home() {
           </section>
 
           {/* FOUNDERS */}
-          <section className="fd fd-full" id="founders" data-ch="Founders" style={bg('/images/gavel.jpg', { '--bgp': '50% 50%' })}>
+          <section className="fd fd-full fd-lt" id="founders" data-ch="Founders" style={bg('/images/gavel.jpg', { '--bgp': '50% 50%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in fd-wide">
               <div className="mk"><h2 className="h2" data-rv="rise">Founders Details</h2></div>
@@ -85,21 +90,21 @@ export default function Home() {
               <div className="mk"><h2 className="h2" data-rv="rise">Philosophy And Working Approach</h2></div>
               <p className="fd-lead">{PHILOSOPHY.lead}</p>
               <ul className="phb-list">
-                {PHILOSOPHY.items.map((t, i) => <li key={t} data-rv="up" style={{ '--d': `${i * 0.09}s` }}>{t}</li>)}
+                {PHILOSOPHY.items.map((t, i) => <li key={t} data-rv="up" data-fx style={{ '--d': `${i * 0.12}s`, '--i': i }}><span>{t}</span></li>)}
               </ul>
               <p className="phb-q" data-rv="up">{PHILOSOPHY.quote.replace(' ;', ';')}</p>
             </div></div>
           </section>
 
           {/* WHY */}
-          <section className="fd fd-half fd-r" id="why" data-ch="Why clients choose us" style={bg('/images/suit.jpg', { '--bgp': '40% 30%' })}>
+          <section className="fd fd-half fd-r fd-lt" id="why" data-ch="Why clients choose us" style={bg('/images/suit.jpg', { '--bgp': '40% 30%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in">
               <div className="mk"><h2 className="h2" data-rv="rise">Why Clients Choose Us</h2></div>
-              <div className="why-rows">
+              <div className="why-g">
                 {WHY.map((w, i) => (
-                  <div className="wr" key={w} data-rv="up" style={{ '--d': `${i * 0.1}s` }}>
-                    <span className="ck"><Ck /></span><span>{w}</span>
+                  <div className={`wc${i === 0 ? ' wc-f' : ''}`} key={w} data-rv="up" data-fx style={{ '--d': `${i * 0.12}s` }}>
+                    <span className="ck"><Ck /></span><span className="wc-t">{w}</span>
                   </div>
                 ))}
               </div>

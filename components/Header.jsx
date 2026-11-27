@@ -42,15 +42,17 @@ export default function Header() {
       const { index, step, total } = e.detail;
       if (index < 0) { run(); return; }
       el.classList.toggle('is-stuck', index > 0);
-      el.classList.remove('is-hidden');
+      el.classList.toggle('is-hidden', index > 0);
       if (index > 0) requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('is-ready'))); else el.classList.remove('is-ready');
       if (prog.current) prog.current.style.transform = `scaleX(${total > 1 ? step / (total - 1) : 0})`;
     };
+    const onMenu = () => setOpen(true);
     window.addEventListener('op:index', onIdx);
+    window.addEventListener('lx:menu', onMenu);
     run();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
-    return () => { window.removeEventListener('op:index', onIdx); window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); };
+    return () => { window.removeEventListener('lx:menu', onMenu); window.removeEventListener('op:index', onIdx); window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); };
   }, []);
 
   useEffect(() => {
