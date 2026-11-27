@@ -736,3 +736,11 @@ html.op .hdr.is-stuck.is-hidden{mix-blend-mode:normal}
 html.op .hdr.is-stuck.is-hidden .hdr-bar{height:auto;top:16px;left:28px;right:auto;width:auto;background:rgba(20,22,26,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:9px 16px;border-radius:2px}
 html.op .hdr.is-stuck.is-hidden .hdr-in{padding:0;width:auto;gap:0}
 html.op .hdr.is-stuck.is-hidden img{height:28px}
+
+/* logo only after the hero: no chip, colour follows what is behind it */
+html.op .hdr.is-stuck.is-hidden .hdr-bar{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;padding:0;top:20px;left:30px}
+html.op .hdr.is-stuck.is-hidden img{height:32px;transition:opacity .4s}
+html.op .hdr.is-stuck.is-hidden[data-tone="light"] .lg-w{display:none!important}
+html.op .hdr.is-stuck.is-hidden[data-tone="light"] .lg-n{display:block}
+html.op .hdr.is-stuck.is-hidden[data-tone="dark"] .lg-n{display:none}
+html.op .hdr.is-stuck.is-hidden[data-tone="dark"] .lg-w{display:block!important}

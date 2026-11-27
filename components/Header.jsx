@@ -41,6 +41,8 @@ export default function Header() {
     const onIdx = (e) => {
       const { index, step, total } = e.detail;
       if (index < 0) { run(); return; }
+      const pn = document.querySelectorAll('.op-track > [data-tone]')[index];
+      el.dataset.tone = pn ? pn.dataset.tone : 'dark';
       el.classList.toggle('is-stuck', index > 0);
       el.classList.toggle('is-hidden', index > 0);
       if (index > 0) requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('is-ready'))); else el.classList.remove('is-ready');

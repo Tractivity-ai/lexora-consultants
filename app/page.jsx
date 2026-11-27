@@ -25,7 +25,7 @@ export default function Home() {
         <div className="op-track">
 
           {/* HERO */}
-          <section className="fd fd-half fd-hero" id="top" data-ch="Home" style={bg('/images/library.jpg')}>
+          <section className="fd fd-half fd-hero" id="top" data-tone="dark" data-ch="Home" style={bg('/images/library.jpg')}>
             <div className="fd-img" aria-hidden="true" />
             <img className="hero-ph only-m" src="/images/library.jpg" alt="" />
             <div className="fd-pn">
@@ -44,7 +44,7 @@ export default function Home() {
           </section>
 
           {/* PRACTICE */}
-          <section className="fd fd-full fd-lt" id="practice" data-ch="Practice areas" style={bg('/images/courtroom.jpg', { '--bgp': '50% 60%' })}>
+          <section className="fd fd-full fd-lt" id="practice" data-tone="light" data-ch="Practice areas" style={bg('/images/courtroom.jpg', { '--bgp': '50% 60%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in fd-wide">
               <div className="mk"><h2 className="h2" data-rv="rise">Practice Areas &amp; Services</h2></div>
@@ -61,7 +61,7 @@ export default function Home() {
           </section>
 
           {/* WHO WE ARE */}
-          <section className="fd fd-half fd-r" id="about" data-ch="Who we are" style={bg('/images/statue.jpg', { '--bgp': '30% 40%' })}>
+          <section className="fd fd-half fd-r" id="about" data-tone="light" data-ch="Who we are" style={bg('/images/statue.jpg', { '--bgp': '30% 40%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in">
               <div className="mk"><h2 className="h2" data-rv="rise">Who We Are</h2></div>
@@ -73,7 +73,7 @@ export default function Home() {
           </section>
 
           {/* FOUNDERS */}
-          <section className="fd fd-full fd-lt" id="founders" data-ch="Founders" style={bg('/images/gavel.jpg', { '--bgp': '50% 50%' })}>
+          <section className="fd fd-full fd-lt" id="founders" data-tone="light" data-ch="Founders" style={bg('/images/gavel.jpg', { '--bgp': '50% 50%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in fd-wide">
               <div className="mk"><h2 className="h2" data-rv="rise">Founders Details</h2></div>
@@ -84,7 +84,7 @@ export default function Home() {
           </section>
 
           {/* PHILOSOPHY */}
-          <section className="fd fd-half fd-ph" id="philosophy" data-ch="Philosophy" style={bg('/images/thinker.png', { '--bgs': 'contain', '--bgp': '78% 85%' })}>
+          <section className="fd fd-half fd-ph" id="philosophy" data-tone="dark" data-ch="Philosophy" style={bg('/images/thinker.png', { '--bgs': 'contain', '--bgp': '78% 85%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in">
               <div className="mk"><h2 className="h2" data-rv="rise">Philosophy And Working Approach</h2></div>
@@ -97,7 +97,7 @@ export default function Home() {
           </section>
 
           {/* WHY */}
-          <section className="fd fd-half fd-r fd-lt" id="why" data-ch="Why clients choose us" style={bg('/images/suit.jpg', { '--bgp': '40% 30%' })}>
+          <section className="fd fd-half fd-r fd-lt" id="why" data-tone="light" data-ch="Why clients choose us" style={bg('/images/suit.jpg', { '--bgp': '40% 30%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in">
               <div className="mk"><h2 className="h2" data-rv="rise">Why Clients Choose Us</h2></div>
@@ -112,7 +112,7 @@ export default function Home() {
           </section>
 
           {/* KNOW YOUR LAW */}
-          <section className="fd fd-full" id="know" data-ch="Know your law" style={bg('/images/library.jpg', { '--bgp': '30% 50%' })}>
+          <section className="fd fd-full" id="know" data-tone="dark" data-ch="Know your law" style={bg('/images/library.jpg', { '--bgp': '30% 50%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in fd-wide">
               <div className="mk"><h2 className="h2" data-rv="rise">Know Your Law</h2></div>
@@ -131,7 +131,7 @@ export default function Home() {
           </section>
 
           {/* DISCUSS + OFFICE + FOOTER */}
-          <section className="fd fd-full fd-end" id="contact" data-ch="Contact" style={bg('/images/courtroom.jpg', { '--bgp': '50% 40%' })}>
+          <section className="fd fd-full fd-end" id="contact" data-tone="dark" data-ch="Contact" style={bg('/images/courtroom.jpg', { '--bgp': '50% 40%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in fd-wide">
               <div className="fin">
