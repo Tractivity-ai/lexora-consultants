@@ -23,8 +23,8 @@ export function FounderCard({ f, delay = 0 }) {
 
 export function FounderTile({ f, delay = 0 }) {
   return (
-    <Link href={`/our-people/${f.id}`} className="ft" style={{ animationDelay: `${delay}s` }}>
-      <div className="ph">{f.img ? <img src={f.img} alt="" /> : <span aria-hidden="true">{f.initials}</span>}</div>
+    <Link href={`/our-people/${f.id}`} className="ft" data-rv="up" style={{ animationDelay: `${delay}s`, '--d': `${delay}s` }}>
+      <div className="ph" data-rv="curtain" style={{ '--d': `${delay + 0.15}s` }}>{f.img ? <img src={f.img} alt="" /> : <span aria-hidden="true">{f.initials}</span>}</div>
       <div className="tx">
         <h3 className="h3">{f.name}</h3>
         <div className="role">{f.role}</div>

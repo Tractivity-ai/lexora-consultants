@@ -8,7 +8,7 @@ export default function DisclaimerModal() {
   const [declined, setDeclined] = useState(false);
 
   useEffect(() => {
-    try { if (sessionStorage.getItem(KEY) === 'yes') setOpen(false); } catch {}
+    try { if (sessionStorage.getItem(KEY) === 'yes') { setOpen(false); document.documentElement.classList.add('go'); } } catch {}
   }, []);
 
   useEffect(() => {
@@ -21,12 +21,13 @@ export default function DisclaimerModal() {
   const accept = () => {
     try { sessionStorage.setItem(KEY, 'yes'); } catch {}
     setOpen(false);
+    document.documentElement.classList.add('go');
   };
 
   return (
     <div className="dsc" role="dialog" aria-modal="true" aria-labelledby="dsct">
       <div className="dsc-card">
-        <img src="/images/logo-navy.png" alt="Lexora Advocates and Consultants" />
+        <img src="/images/logo-black.png" alt="Lexora Advocates and Consultants" />
         {!declined ? (
           <>
             <h2 className="h2" id="dsct" style={{ marginTop: 18 }}>Disclaimer and confirmation</h2>
