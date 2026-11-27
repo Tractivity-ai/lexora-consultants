@@ -723,3 +723,16 @@ html.op .hdr .hdr-prog{display:none}
  .hero-strip .lead.bar .bar-f{flex:none}
  .hero-strip .lead.bar .consent{margin-top:10px}
 }
+
+/* after the hero: only the logo stays, pinned top-left, readable on dark and light folds */
+html.op .hdr.is-stuck.is-hidden{mix-blend-mode:difference;pointer-events:none}
+html.op .hdr.is-stuck.is-hidden .hdr-bar{transform:none;background:transparent;border-color:transparent;height:72px}
+html.op .hdr.is-stuck.is-hidden .nav-d,html.op .hdr.is-stuck.is-hidden .hdr-cta,html.op .hdr.is-stuck.is-hidden .menu-b{display:none!important}
+html.op .hdr.is-stuck.is-hidden .lg{pointer-events:auto}
+html.op .hdr.is-stuck.is-hidden .lg-n{display:none}
+html.op .hdr.is-stuck.is-hidden .lg-w{display:block!important}
+html.op .hdr.is-stuck.is-hidden img{height:34px}
+html.op .hdr.is-stuck.is-hidden{mix-blend-mode:normal}
+html.op .hdr.is-stuck.is-hidden .hdr-bar{height:auto;top:16px;left:28px;right:auto;width:auto;background:rgba(20,22,26,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:9px 16px;border-radius:2px}
+html.op .hdr.is-stuck.is-hidden .hdr-in{padding:0;width:auto;gap:0}
+html.op .hdr.is-stuck.is-hidden img{height:28px}
