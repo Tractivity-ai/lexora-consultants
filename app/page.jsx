@@ -34,9 +34,9 @@ export default function Home() {
                   <Btn href="/contact" className="btn btn-ow">Contact the office</Btn>
                 </div>
                 <p className="hero-sub hx hx3">Bombay High Court, Nagpur Bench · District and Sessions Courts · Consumer forums and tribunals</p>
-                <div className="hx hx4 only-m"><LeadForm /></div>
               </div>
             </div>
+            <div className="hero-strip hx hx4"><div className="strip-in"><LeadForm variant="bar" /></div></div>
           </section>
 
           {/* PRACTICE */}
@@ -68,7 +68,7 @@ export default function Home() {
           </section>
 
           {/* FOUNDERS */}
-          <section className="fd fd-full" id="founders" data-ch="Founders" style={bg('/images/office.jpg', { '--bgp': '50% 30%' })}>
+          <section className="fd fd-full" id="founders" data-ch="Founders" style={bg('/images/gavel.jpg', { '--bgp': '50% 50%' })}>
             <div className="fd-img" aria-hidden="true" />
             <div className="fd-pn"><div className="fd-in fd-wide">
               <div className="mk"><h2 className="h2" data-rv="rise">Founders Details</h2></div>
